@@ -1,0 +1,80 @@
+package hydraulic;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Source e1 = new Source("sorgente1");
+		Tap e2 = new Tap("rubinetto1");
+		Sink e3 = new Sink("scarico1");
+		Split e4 = new Split("T1");
+		Tap e5 = new Tap("rubinetto2");
+		Tap e6 = new Tap("rubinetto3");
+
+		HSystem s1 = new HSystem();
+
+		s1.addElement(e1);
+		s1.addElement(e2);
+		s1.addElement(e3);
+		e1.setFlow(10);
+
+		System.out.println(e1.getName());
+		System.out.println(e2.getName());
+		System.out.println(e3.getName());
+
+		// a.connect(b);
+		e1.connect(e2);
+		e2.connect(e4);
+		e4.connect(e5, 0);
+		e4.connect(e6, 1);
+
+		e2.setOpen(true);
+		e5.setOpen(true);
+		e6.setOpen(false);
+
+		System.out.println("La portata di e1, che dovrebbe valere 10 vale: " + e1.flow);
+		System.out.println("La portata di e2, che dovrebbe valere 10 vale: " + e2.flow);
+		System.out.println("La portata di e5, che dovrebbe valere 5 vale: " + e5.flow);
+		System.out.println("La portata di e6, che dovrebbe valere 0 vale: " + e6.flow + "\n");
+
+		e3.connect(e1); // non deve fare niente
+
+		Element test = new Element("test");
+		test = e1.getOutput();
+		System.out.println("Elemento connesso ad a " + e1.getName() + " = " + test.getName() + "\n");
+
+		Element test1 = new Element("test1");
+		test1 = e2.getOutput();
+		System.out.println("Elemento connesso ad a " + e2.getName() + " = " + test1.getName() + "\n");
+
+		//
+		// Split e4 = new Split ("split1");
+		// s1.addElement(e4);
+		// System.out.println(e4.getName());
+		//
+		// Split e5 = new Split ("split2");
+		// s1.addElement(e5);
+		// System.out.println(e5.getName());
+		//
+		// Source e10 = new Source("sorgente2");
+		// Tap e11 = new Tap("rubinetto2");
+		//
+		// e4.connect(e10, 0);
+		// e4.connect(e11, 1);
+		//
+		// e5.connect(e11, 0);
+		// e5.connect(e10, 1);
+		//
+		// System.out.println("\nGli elementi connessi a " + e4.getName() + " sono i
+		// seguenti: " );
+		// System.out.println(e4.getOutputs()[0].getName() + " " +
+		// e4.getOutputs()[1].getName() );
+		//
+		// System.out.println("\nGli elementi connessi a " + e5.getName() + " sono i
+		// seguenti: " );
+		// System.out.println(e5.getOutputs()[0].getName() + " " +
+		// e5.getOutputs()[1].getName() );
+
+	}
+
+}

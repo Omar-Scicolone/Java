@@ -1,0 +1,37 @@
+package university;
+
+public class Course {
+	private String title;
+	private String teacher;
+	private int idCourse;
+	private Student[] iscritti = new Student [University.MAX_STUDENT_PER_COURSE];
+	
+	public Course (String title, String teacher, int idCourse) {
+		this.title = title;
+		this.teacher = teacher;
+		this.idCourse = idCourse;
+	}
+
+	public String getInfoCourse(){
+		return idCourse + ", " + title + ", " + teacher;
+	}
+	
+	public void enroll(Student s) {
+		for (int i = 0; i < iscritti.length; i++) {
+			if(iscritti[i] == null){
+				iscritti[i]=s;
+				break;
+			}
+		}
+	}
+	public String attendees(){
+		StringBuffer result = new StringBuffer();
+		
+		for(Student s : iscritti){
+			if(s!=null){
+				result.append(s.getInfo()).append("\n");
+			}
+		}
+		return result.toString();
+	}
+}

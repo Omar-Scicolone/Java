@@ -1,0 +1,17 @@
+package mountainhuts;
+
+public class Municipality {
+
+	public String getName() {
+		return null;
+	}
+
+	public String getProvince() {
+		return null;
+	}
+
+	public Integer getAltitude() {
+		return null;
+	}
+
+}

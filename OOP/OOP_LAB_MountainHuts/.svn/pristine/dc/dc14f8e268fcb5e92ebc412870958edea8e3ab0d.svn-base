@@ -1,0 +1,27 @@
+package mountainhuts;
+
+import java.util.Optional;
+
+public class MountainHut {
+
+	public String getName() {
+		return null;
+	}
+
+	public Optional<Integer> getAltitude() {
+		return null;
+	}
+
+	public String getCategory() {
+		return null;
+	}
+
+	public Integer getBedsNumber() {
+		return null;
+	}
+
+	public Municipality getMunicipality() {
+		return null;
+	}
+
+}

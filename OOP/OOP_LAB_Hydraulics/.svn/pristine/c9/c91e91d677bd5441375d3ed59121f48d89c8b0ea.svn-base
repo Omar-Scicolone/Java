@@ -1,0 +1,35 @@
+package hydraulic;
+import java.util.ArrayList;
+
+public class HSystem {
+
+	ArrayList<Element> elementi = new ArrayList<Element>();
+	
+	
+	public void addElement(Element elem){
+		elementi.add(elem);
+	}
+	
+
+	public Element[] getElements(){
+		Element[] vett = elementi.toArray(new Element[elementi.size()]);
+		return vett;
+	}
+	
+	/**
+	 * Prints the layout of the system starting at each Source
+	 */
+	public String layout(){
+		// TODO: to be implemented
+		return null;
+	}
+	
+	/**
+	 * starts the simulation of the system
+	 */
+	public void simulate(SimulationObserver observer){
+		// TODO: to be implemented
+		
+	}
+
+}

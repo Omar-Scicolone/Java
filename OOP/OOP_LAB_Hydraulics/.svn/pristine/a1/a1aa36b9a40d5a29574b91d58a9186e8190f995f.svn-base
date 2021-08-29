@@ -1,0 +1,30 @@
+package hydraulic;
+
+public class Split extends Element {
+
+	Element successivo2;
+
+	public Split(String name) {
+		super(name);
+
+	}
+
+	public Element[] getOutputs() {
+		Element[] vettore = new Element[2];
+		vettore[0] = this.successivo;
+		vettore[1] = this.successivo2;
+		return vettore;
+	}
+
+	public void connect(Element elem, int noutput) {
+		if (noutput == 0) {
+			this.successivo = elem;
+			successivo.flow = precedente.flow / 2;
+		} else {
+			this.successivo2 = elem;
+
+			successivo2.flow = precedente.flow / 2;
+		}
+	}
+
+}

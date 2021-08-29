@@ -1,0 +1,39 @@
+package university;
+
+public class Student {
+	private String first;
+	private String last;
+	private int matr;
+	private Course [] iscrizioni= new Course[University.MAX_COURSES_PER_STUDENT]; ;
+	
+	
+	public Student(String first, String last, int matr) {
+		this.first = first;
+		this.last = last;
+		this.matr = matr;
+		
+	}
+	
+	public String getInfo(){
+		return matr + " " + first + " " + last;
+	}
+	
+	public void enroll(Course c){
+		for(int i=0; i < iscrizioni.length; ++i){
+			if( iscrizioni[i] == null){
+				iscrizioni[i] = c;
+				break;
+			}
+		}
+	}
+
+	public String courses() {
+		StringBuffer result = new StringBuffer();
+		for(Course c : iscrizioni){
+			if(c!=null){
+				result.append(c.getInfoCourse()).append("\n");
+			}
+		}
+		return result.toString();
+	}
+}

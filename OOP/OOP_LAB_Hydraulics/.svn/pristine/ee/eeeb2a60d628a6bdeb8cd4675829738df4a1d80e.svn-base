@@ -1,0 +1,13 @@
+package hydraulic;
+
+public class Source extends Element {
+
+	public Source(String name) {
+		super(name);
+	}
+
+	public void setFlow(double flow) {
+		
+	}
+
+}

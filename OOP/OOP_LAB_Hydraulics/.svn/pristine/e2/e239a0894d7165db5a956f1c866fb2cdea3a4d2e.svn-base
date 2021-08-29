@@ -1,0 +1,69 @@
+package hydraulic;
+
+public class Element {
+
+	protected String name;
+	Element precedente;
+	Element successivo;
+	// public static final int MAX_CONN = 100;
+	// Element[] femmine = new Element[MAX_CONN];
+	// Element[] maschi = new Element[MAX_CONN];
+	double flow;
+
+	public Element(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void connect(Element elem) {
+
+		// String nomeF = elem.getName();
+		// Element f = new Element(nomeF); SEI UN COGLIONE.
+		//
+		// for(int i=0; i<femmine.length; i++) {
+		// if(femmine[i] == null) {
+		// femmine[i] = elem;
+		// break;
+		// }
+		// }
+		//
+		// for(int i=0; i<maschi.length; i++) {
+		// if(maschi[i]==null) {
+		// maschi[i] = this;
+		// break;
+		// }
+		// }
+		//
+		this.successivo = elem;
+		elem.precedente = this;
+	}
+
+	/**
+	 * Retrieves the element connected downstream of this
+	 * 
+	 * @return downstream element
+	 */
+	public Element getOutput() {
+
+		return this.successivo;
+		// int index = 0;
+		// //String name = this.name;
+		// //cercare in maschi l'oggetto, quindi indice, quindi indice in femmina
+		// for(int i=0; i<maschi.length; i++) {
+		// if(maschi[i]!= null && maschi[i].name == this.name) {
+		// index = i;
+		// break;
+		// }
+		// }
+
+		// String nome = femmine[index].getName();
+		// for (int i = 0; i < ; i++) {
+		//
+		// }
+
+	}
+
+}
