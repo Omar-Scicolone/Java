@@ -1,5 +1,6 @@
 # Programming in Java
 
-## 
+## Collection of C projects
 
-Collection of project in Java from the course "Object Oriented Programming"
+* The projects in "OOP" are from the course "Object Oriented programming"
+* ...
